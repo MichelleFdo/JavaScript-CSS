@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Destruvturing Array</title>
+    </head>
+    <body>
+        <script>
+            const details = ['Wes Bos' , 123, 'wesbos.com'];
+            const [name, id, wesite] = details;
+
+            console.log(name, id, wesite)
+
+            const data = 'basketball,sports,1990,23'
+            const [itemName,category,sku,inventory] = data.split(',')
+            console.log(itemName,category,sku,inventory);
+
+            const team = ['George', 'Lakshan', 'nandula', 'dilan']
+
+            const [captain, assistant, ...players] = team
+        </script>
+    </body>
+</html>
