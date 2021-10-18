@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Async Await - Custom Promis</title>
+    </head>
+    <body>
+        <script>
+            /* eslint-disable */
+            function breathe(amount) {
+              return new Promise((resolve, reject) => {
+                  if(amount < 500) {
+                      reject('Time Out')
+                  }
+                setTimeout(() => resolve(`Done for ${amount} time`), amount);
+              });
+            }
+
+            breathe(1000).then((res) => {
+              console.log(res);
+              return breathe(500);
+            }).then((res) => {
+              console.log(res);
+              return breathe(200);
+            }).then((res) => {
+              console.log(res);
+              return breathe(300);
+            }).then((res) => {
+              console.log(res);
+            });
+        </script>
+    </body>
+</html>
