@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>When not use arrow functions</title>
+    </head>
+    <body>
+        <style>
+            button {font-size: large;}
+            .on {background: blue;}
+
+            
+        </style>
+        
+        <button id="pushy">Push Me</button>
+
+        <script>
+            const button = document.querySelector('#pushy');
+            button.addEventListener('click', function(){
+                this.classList.toggle('on');
+            });
+
+
+            //when we nedd a method to bind to an object
+           const person = {
+               points: 23,
+               score: function() {
+                   this.points++;
+               }              
+            }
+
+            //when we need to add a prototype method
+            
+            class Car {
+                constructor(make, color){
+                    this.make = make;
+                    this.color = color;
+                }
+            }
+
+            const beemer = new Car('BMW', 'Blue');
+            const subi = new Car('honda', 'Red');
+
+          Car.prototype.summarize = function() {
+              return `This car is a ${this.make} in the color ${this.color}`;
+          }
+
+          //when we need a argument object
+          const oderChildren = function(){
+              const chilren = Array.from(arguments);
+              return chilren.map((child, i)=> {
+                  return `${child} was child #${i + 1}`;
+              })
+              console.log(arguments);
+             
+          }
+        </script>
+    </body>
+</html>
