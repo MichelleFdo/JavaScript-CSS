@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Map</title>
+    </head>
+    <body>
+        <script>
+            const dogs = new Map();
+
+            dogs.set('Snicker', 3);
+            dogs.set('sunny', 4);
+            dogs.set('Hugo', 3);
+
+            dogs.forEach((value, key) => console.log(value, key));
+            /* eslint-disable */
+            for (const [val, key] of dogs) {
+                console.log(val, key);
+            }
+        </script>
+    </body>
+</html>
