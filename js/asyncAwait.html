@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <video controls class="handsom"></video>
+    </head>
+    <body>
+        <script>
+            const res = fetch('https://api.github.com/users/wesbos');
+            console.log(res);
+
+            // fetch('https://api.github.com/users/wesbos').then((res) => {
+            //   console.log(res);
+            // });
+
+            // fetch('https://github.com/users/wesbos').then((res) => {
+            //   console.log(res);
+            // }).then((res) => {
+            //   console.log(res);
+            // }).catch((err) => {
+            //   console.error('OH!!!');
+            //   console.error(err);
+            // });
+
+            // const video = document.querySelector('.handsom');
+
+            // navigator.mediaDevices.getUserMedia({ video: true }).then(( mediaStream) => {
+            //   video.srcObject = mediaStream;
+            //   video.load();
+            //   video.play();
+            // }).catch((err) => {
+            //   console.log(err);
+            // });
+        </script>
+    </body>
+</html>
