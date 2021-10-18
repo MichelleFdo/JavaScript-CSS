@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arrow Functions with this Key word</title>
+    </head>
+    <body>
+
+        <style>
+
+            .wrap {
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: sans-serif;
+                font-weight: 100;
+                color: white;
+            }
+            
+            .box {
+                background:black url(https://unsplash.it/1500/1500?image=560&blur=0.5) center fixed no-repeat;
+                width: 50px;
+                height: 50px;
+                padding: 50px;
+                transition: width 0.2s, height 0.6s;
+                position: relative;
+            }
+
+            .box.openning {
+                width: 500px;
+                height: 500px;
+            }
+
+            .box h2 {
+                position: absolute;
+                width: 100%;
+                font-size: 100px;
+                transform: translateX(-200%);
+                transition: all 0.5s;
+                top: 0;
+            }
+
+            .box p {
+                position: absolute;
+                width: 100%;
+                transform: translateX(200%);
+                transition: all 0.5s;
+                bottom: 0;
+
+            }
+
+            .box.open > * {
+                transform: translateX(0%);
+            }
+
+        </style>
+
+<!-- <div class="box">
+               
+    <p>@wesbos</p>
+</div> -->
+        <div class="wrap">
+            <div class="box">
+                <h2>WES BOS</h2>
+                <p>@wesbos</p>
+            </div>
+        </div>
+
+      
+            
+       
+
+
+
+        <script>
+            const box = document.querySelector('.box');
+          // console.log(box);
+        //    box.addEventListener('click',  () =>{
+        //        console.log(this);
+        //    });
+
+
+
+
+
+            // box.addEventListener('click', function(){
+            //     //console.log(this);
+            //     this.classList.toggle('openning');
+            //     setTimeout(function(){
+            //         this.classList.toggle('open');
+            //     });
+            // });
+            //---->  console.log(this);
+
+
+            // box.addEventListener('click', function(){
+            //     //console.log(this);
+            //     this.classList.toggle('openning');
+            //     setTimeout(function(){
+            //         console.log(this);
+            //         this.classList.toggle('open');
+            //     });
+            // });
+            // //  -----> var self = this; then solved
+
+            // box.addEventListener('click', function(){
+            //     var self = this;
+            //     //console.log(this);
+            //     this.classList.toggle('openning');
+            //     setTimeout(function(){
+            //         console.log(this);
+            //         self.classList.toggle('open');
+            //     });
+            // });----> creat arrow function
+
+
+            box.addEventListener('click', function(){
+                var self = this;
+                //console.log(this);
+                this.classList.toggle('openning');
+                setTimeout(() => {
+                    console.log(this);
+                    self.classList.toggle('open');
+                }), 500;
+            });
+        </script>
+    </body>
+</html>
