@@ -1,0 +1,40 @@
+<div class="my-weather">
+    <div *ngIf="weatherType == 0; then myWeatherBlock else cityWeatherBlock"></div>
+        <ng-template #myWeatherBlock>
+            <div *ngIf="dailyArray.length>0; then thenBlock else elseBlock"></div>
+            <ng-template #thenBlock>
+                <div class="temperature-section">
+                    <h1>{{WeatherData.timezone}} haha {{weatherType}}</h1>
+                    <div class="grid">
+                        <div class="col-5">
+                            <h3></h3>
+                            <div class="temp-text">
+                                {{(WeatherData.current.temp-273.3).toFixed(2)}}&deg;
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <img src="{{imgURL}}" alt="current-weather-icon">
+                            <div class="current-weather-description">
+                                {{WeatherData.current.weather[0].description}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="current-date-text">
+                    {{currentDate.toDateString()}}
+                </div>
+                <p-divider></p-divider>
+                <div class="grid justify-content-center">
+                    <app-daily-weather *ngFor="let day of dailyArray" [dailyWeather]="day"></app-daily-weather>
+                </div>
+            </ng-template>
+            <ng-template #elseBlock>
+                Please Wait...
+            </ng-template>
+        </ng-template>
+        <ng-template #cityWeatherBlock>
+            <div>
+                hola hola
+            </div>
+        </ng-template>
+</div>

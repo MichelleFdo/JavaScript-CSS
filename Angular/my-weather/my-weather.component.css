@@ -1,0 +1,20 @@
+.my-weather {
+  height: 100%;
+  background-image: url("../../../assets/images/my-weather-day-image.jpg");
+  padding: 0 40px;
+}
+
+.temperature-section {
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.temp-text {
+  font-size: 80px;
+}
+
+.current-date-text {
+  color: white;
+  font-size: 30px;
+}
