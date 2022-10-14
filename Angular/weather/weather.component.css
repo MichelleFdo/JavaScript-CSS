@@ -1,0 +1,33 @@
+.container {
+    border: black solid 2px;
+    margin: 1rem;
+    padding: 1rem;;
+}
+
+.container  div {
+    border: black solid 2px;
+
+}
+
+.left-container  {
+}
+
+.search {
+    height: 100px;
+}
+
+.countries {
+    height: 150px;
+}
+
+.time-local{
+    height: 100px;
+}
+
+.temp {
+    height: 250px;
+}
+
+.city{
+    height: 100px;
+}
