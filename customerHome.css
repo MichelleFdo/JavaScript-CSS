@@ -9,3 +9,8 @@
     color:blue;
     padding:10px;
 }
+
+.mdimg{
+    position:fixed;
+    bottom:0;
+}
