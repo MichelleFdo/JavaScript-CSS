@@ -119,7 +119,7 @@ export default function CreateJob() {
           }
 
       }).catch((err)=>{
-
+        console.log(err);
       })
   }
 
