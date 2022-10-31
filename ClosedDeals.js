@@ -42,6 +42,22 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
+function tableDataBtnPrimary(handleClickOpen) {
+  return (
+    <Button color="primary" round onClick={handleClickOpen}>
+      View
+    </Button>
+  );
+}
+
+function tableDataBtnSecondary(handleClickOpen) {
+  return (
+    <Button color="secondary" round onClick={handleClickOpen}>
+      View
+    </Button>
+  );
+}
+
 export default function TableList() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
@@ -64,20 +80,54 @@ export default function TableList() {
           <CardBody>
             <Table
               tableHeaderColor="primary"
-              tableHead={["Order ID","Date and Time","Prescription","View Details"]}
+              tableHead={[
+                "Order ID",
+                "Date and Time",
+                "Prescription",
+                "View Details",
+              ]}
               tableData={[
-                ["MO2001", "2021-06-05 13:54", <Button color="primary" round onClick={handleClickOpen}>View</Button>,<Button color="secondary" round onClick={handleClickOpen}>View</Button>],
-                ["MO2002", "2021-06-05 14:12", <Button color="primary" round onClick={handleClickOpen}>View</Button>,<Button color="secondary" round onClick={handleClickOpen}>View</Button>],
-                ["MO2003", "2021-06-05 14:36", <Button color="primary" round onClick={handleClickOpen}>View</Button>,<Button color="secondary" round onClick={handleClickOpen}>View</Button>],
-                ["MO2004", "2021-06-05 14:51", <Button color="primary" round onClick={handleClickOpen}>View</Button>,<Button color="secondary" round onClick={handleClickOpen}>View</Button>],
-                ["MO2005", "2021-06-05 15:04", <Button color="primary" round onClick={handleClickOpen}>View</Button>,<Button color="secondary" round onClick={handleClickOpen}>View</Button>],
-                ["MO2006", "2021-06-05 15:24", <Button color="primary" round onClick={handleClickOpen}>View</Button>,<Button color="secondary" round onClick={handleClickOpen}>View</Button>],
+                [
+                  "MO2001",
+                  "2021-06-05 13:54",
+                  tableDataBtnPrimary(handleClickOpen),
+                  tableDataBtnSecondary(handleClickOpen),
+                ],
+                [
+                  "MO2002",
+                  "2021-06-05 14:12",
+                  tableDataBtnPrimary(handleClickOpen),
+                  tableDataBtnSecondary(handleClickOpen),
+                ],
+                [
+                  "MO2003",
+                  "2021-06-05 14:36",
+                  tableDataBtnPrimary(handleClickOpen),
+                  tableDataBtnSecondary(handleClickOpen),
+                ],
+                [
+                  "MO2004",
+                  "2021-06-05 14:51",
+                  tableDataBtnPrimary(handleClickOpen),
+                  tableDataBtnSecondary(handleClickOpen),
+                ],
+                [
+                  "MO2005",
+                  "2021-06-05 15:04",
+                  tableDataBtnPrimary(handleClickOpen),
+                  tableDataBtnSecondary(handleClickOpen),
+                ],
+                [
+                  "MO2006",
+                  "2021-06-05 15:24",
+                  tableDataBtnPrimary(handleClickOpen),
+                  tableDataBtnSecondary(handleClickOpen),
+                ],
               ]}
             />
           </CardBody>
         </Card>
       </GridItem>
-      
     </GridContainer>
   );
 }
